@@ -19,6 +19,9 @@ public class TestJobs {
     private static final String TITLE_OF_JOB = "Software Development Engineer in Test";
     private static final String TITLE_OF_JOB_LUNA = "Software Development Engineer in Test - LUNA";
     private static final String DATE_OF_CREATING_JOB = "Jan 16, 2017";
+    private static final int EXPECTED_NUMBER_TOTAL_RESULT = 42;
+    private static final int EXPECTED_NUMBER_OF_POSTED_JOBS = 5;
+
 
     @BeforeTest
     public void setUp() {
@@ -32,8 +35,8 @@ public class TestJobs {
         mainPage.searchForJob(KEYWORD_TO_FIND, LOCATION_TO_FIND);
 
         testJobPage = new JobsInKraPage(driver);
-        assertEquals(testJobPage.getTotalResult(), 42);
-        assertEquals(testJobPage.getNumberOfPostedJobs(TITLE_OF_JOB), 5);
+        assertEquals(testJobPage.getTotalResult(), EXPECTED_NUMBER_TOTAL_RESULT);
+        assertEquals(testJobPage.getNumberOfPostedJobs(TITLE_OF_JOB), EXPECTED_NUMBER_OF_POSTED_JOBS);
         testJobPage.clickFirstPostedJob(TITLE_OF_JOB_LUNA);
 
         softwDevLunaPage = new SoftwareDevLunaPage(driver);
