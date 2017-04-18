@@ -13,7 +13,7 @@ public class JobsInKraPage {
     private ElementToWait elemToWait;
 
     @FindBy(className="total_results")
-    WebElement totalResult;
+    private WebElement totalResult;
 
     public JobsInKraPage(WebDriver driver) {
         this.driver = driver;

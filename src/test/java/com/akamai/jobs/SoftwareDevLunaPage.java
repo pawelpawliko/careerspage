@@ -10,7 +10,7 @@ public class SoftwareDevLunaPage {
     private ElementToWait elemToWait;
 
     @FindBy(xpath="//dd[@class='job_post_date']/span[1]")
-    WebElement date;
+    private WebElement date;
 
     public SoftwareDevLunaPage(WebDriver driver) {
         this.driver = driver;

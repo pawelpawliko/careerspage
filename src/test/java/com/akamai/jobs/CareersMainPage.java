@@ -12,13 +12,13 @@ public class CareersMainPage {
     private String url = "https://akamaijobs.referrals.selectminds.com/";
 
     @FindBy(id="keyword")
-    WebElement searchKeyword;
+    private WebElement searchKeyword;
 
     @FindBy(id="loc_placeholder")
-    WebElement searchLocation;
+    private WebElement searchLocation;
 
     @FindBy(id="jSearchSubmit")
-    WebElement searchSubmit;
+    private WebElement searchSubmit;
 
     public CareersMainPage(WebDriver driver) {
         this.driver = driver;
