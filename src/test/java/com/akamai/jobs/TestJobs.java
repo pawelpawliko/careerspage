@@ -14,12 +14,11 @@ public class TestJobs {
     private JobsInKraPage testJobPage;
     private SoftwareDevLunaPage softwDevLunaPage;
 
-    private String keyword = "test";
-    private String location = "Krakow, Poland";
-    private String titleOfJob = "Software Development Engineer in Test";
-    private String titleOfJobLuna = "Software Development Engineer in Test - LUNA";
-    private String date = "Jan 16, 2017";
-
+    private static final String KEYWORD_TO_FIND = "test";
+    private static final String LOCATION_TO_FIND = "Krakow, Poland";
+    private static final String TITLE_OF_JOB = "Software Development Engineer in Test";
+    private static final String TITLE_OF_JOB_LUNA = "Software Development Engineer in Test - LUNA";
+    private static final String DATE_OF_CREATING_JOB = "Jan 16, 2017";
 
     @BeforeTest
     public void setUp() {
@@ -30,15 +29,15 @@ public class TestJobs {
     @Test
     public void TestCareers() {
         mainPage = new CareersMainPage(driver);
-        mainPage.searchForJob(keyword, location);
+        mainPage.searchForJob(KEYWORD_TO_FIND, LOCATION_TO_FIND);
 
         testJobPage = new JobsInKraPage(driver);
         assertEquals(testJobPage.getTotalResult(), 42);
-        assertEquals(testJobPage.getNumberOfPostedJobs(titleOfJob), 5);
-        testJobPage.clickFirstPostedJob(titleOfJobLuna);
+        assertEquals(testJobPage.getNumberOfPostedJobs(TITLE_OF_JOB), 5);
+        testJobPage.clickFirstPostedJob(TITLE_OF_JOB_LUNA);
 
         softwDevLunaPage = new SoftwareDevLunaPage(driver);
-        assertEquals(softwDevLunaPage.getDate(), date);
+        assertEquals(softwDevLunaPage.getDate(), DATE_OF_CREATING_JOB);
     }
 
     @AfterTest

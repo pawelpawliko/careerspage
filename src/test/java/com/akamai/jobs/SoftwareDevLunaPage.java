@@ -22,5 +22,4 @@ public class SoftwareDevLunaPage {
         elemToWait.waitForElementPresent(date, 5);
         return date.getText();
     }
-
 }

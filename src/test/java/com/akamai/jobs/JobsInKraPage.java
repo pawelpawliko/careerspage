@@ -30,12 +30,10 @@ public class JobsInKraPage {
     public int getNumberOfPostedJobs(String titleOfJob) {
         List<WebElement> jobs = driver.findElements(By.partialLinkText(titleOfJob));
         return jobs.size();
-
     }
 
     public void clickFirstPostedJob(String titleOfJob) {
         List<WebElement> jobs = driver.findElements(By.linkText(titleOfJob));
         jobs.get(0).click();
     }
-
 }

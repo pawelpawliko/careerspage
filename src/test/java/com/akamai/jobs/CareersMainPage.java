@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CareersMainPage {
     private WebDriver driver;
-    private String url = "https://akamaijobs.referrals.selectminds.com/";
+    private static final String AKAMAI_CAREERS_URL = "https://akamaijobs.referrals.selectminds.com/";
 
     @FindBy(id="keyword")
     private WebElement searchKeyword;
@@ -23,7 +23,7 @@ public class CareersMainPage {
     public CareersMainPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        driver.get(url);
+        driver.get(AKAMAI_CAREERS_URL);
     }
 
     public void setJobKeyword(String keyword) {
