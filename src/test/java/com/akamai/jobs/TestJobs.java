@@ -18,7 +18,7 @@ public class TestJobs {
     private static final String LOCATION_TO_FIND = "Krakow, Poland";
     private static final String TITLE_OF_JOB = "Software Development Engineer in Test";
     private static final String TITLE_OF_JOB_LUNA = "Software Development Engineer in Test - LUNA";
-    private static final String DATE_OF_CREATING_JOB = "Jan 16, 2017";
+    private static final String EXPECTED_DATE_OF_CREATING_JOB = "Jan 16, 2017";
     private static final int EXPECTED_NUMBER_TOTAL_RESULT = 42;
     private static final int EXPECTED_NUMBER_OF_POSTED_JOBS = 5;
 
@@ -40,7 +40,7 @@ public class TestJobs {
         testJobPage.clickFirstPostedJob(TITLE_OF_JOB_LUNA);
 
         softwDevLunaPage = new SoftwareDevLunaPage(driver);
-        assertEquals(softwDevLunaPage.getDate(), DATE_OF_CREATING_JOB);
+        assertEquals(softwDevLunaPage.getDate(), EXPECTED_DATE_OF_CREATING_JOB);
     }
 
     @AfterTest
